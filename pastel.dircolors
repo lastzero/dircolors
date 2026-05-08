@@ -1,0 +1,324 @@
+# Pastel dircolors Profile
+#
+# Copyright (c) 2026-present Michael Mayer
+# Licensed under the MIT license found in the LICENSE file.
+#
+# Usage:
+#   eval "$(dircolors -b path/to/pastel.dircolors)"
+#
+# Notes:
+# - dircolors / LS_COLORS only supports ANSI SGR codes, not RGB hex values.
+# - The visible colors therefore depend on the terminal palette slots being
+#   mapped to the "Pastel" palette defined in pastel_palette.sh.
+#
+# ANSI slot mapping expected from the terminal:
+#   30/40  -> palette 0  -> #1e1f22
+#   31/41  -> palette 1  -> #f89494
+#   32/42  -> palette 2  -> #b2e4a7
+#   33/43  -> palette 3  -> #ffef9f
+#   34/44  -> palette 4  -> #a9c7f1
+#   35/45  -> palette 5  -> #cfbaf0
+#   36/46  -> palette 6  -> #96c2c6
+#   37/47  -> palette 7  -> #f1edfb
+#   90/100 -> palette 8  -> #393b40
+#   91/101 -> palette 9  -> #fda5ac
+#   92/102 -> palette 10 -> #b9fbc0
+#   93/103 -> palette 11 -> #fdffb6
+#   94/104 -> palette 12 -> #b1e5f7
+#   95/105 -> palette 13 -> #f1c7e9
+#   96/106 -> palette 14 -> #c0fdff
+#   97/107 -> palette 15 -> #fcfcfc
+
+COLOR tty
+
+TERM alacritty
+TERM alacritty-direct
+TERM ansi
+TERM *color*
+TERM con[0-9]*x[0-9]*
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM dvtm
+TERM dvtm-256color
+TERM Eterm
+TERM eterm-color
+TERM fbterm
+TERM gnome
+TERM gnome-256color
+TERM hurd
+TERM jfbterm
+TERM konsole
+TERM konsole-256color
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mlterm
+TERM putty
+TERM putty-256color
+TERM rxvt*
+TERM rxvt-unicode
+TERM rxvt-256color
+TERM rxvt-unicode256
+TERM screen*
+TERM screen-256color
+TERM st
+TERM st-256color
+TERM terminator
+TERM tmux*
+TERM tmux-256color
+TERM vt100
+TERM xterm*
+TERM xterm-color
+TERM xterm-88color
+TERM xterm-256color
+TERM xterm-kitty
+
+#+-----------------+
+#+ Global Defaults +
+#+-----------------+
+NORMAL 00
+RESET 0
+
+FILE 00
+DIR 01;34
+LINK 01;36
+MULTIHARDLINK 04;36
+
+FIFO 04;01;36
+SOCK 04;33
+DOOR 04;01;36
+BLK 01;33
+CHR 33
+
+ORPHAN 31
+MISSING 01;37;41
+
+EXEC 01;36
+
+SETUID 01;04;37
+SETGID 01;04;37
+CAPABILITY 01;37
+
+STICKY_OTHER_WRITABLE 01;37;44
+OTHER_WRITABLE 01;04;34
+STICKY 04;37;44
+
+#+-------------------+
+#+ Extension Pattern +
+#+-------------------+
+#+--- Archives ---+
+.7z 01;31
+.ace 01;31
+.alz 01;31
+.arc 01;31
+.arj 01;31
+.bz 01;31
+.bz2 01;31
+.cab 01;31
+.cpio 01;31
+.deb 01;31
+.dz 01;31
+.ear 01;31
+.esd 01;31
+.gz 01;31
+.jar 01;31
+.lha 01;31
+.lrz 01;31
+.lz 01;31
+.lz4 01;31
+.lzh 01;31
+.lzma 01;31
+.lzo 01;31
+.rar 01;31
+.rpm 01;31
+.rz 01;31
+.sar 01;31
+.swm 01;31
+.t7z 01;31
+.tar 01;31
+.taz 01;31
+.tbz 01;31
+.tbz2 01;31
+.tgz 01;31
+.tlz 01;31
+.txz 01;31
+.tz 01;31
+.tzo 01;31
+.tzst 01;31
+.war 01;31
+.wim 01;31
+.xz 01;31
+.z 01;31
+.Z 01;31
+.zip 01;31
+.zoo 01;31
+.zst 01;31
+
+#+--- Audio ---+
+.aac 36
+.au 36
+.flac 36
+.m4a 36
+.mid 36
+.midi 36
+.mka 36
+.mp3 36
+.mpa 36
+.mpc 36
+.ogg 36
+.oga 36
+.opus 36
+.ra 36
+.spx 36
+.wav 36
+.xspf 36
+
+#+--- Crypto / Secrets ---+
+.3des 01;35
+.aes 01;35
+.asc 01;35
+.gpg 01;35
+.key 01;35
+.pem 01;35
+.pgp 01;35
+.pub 01;35
+
+#+--- Documents ---+
+.csv 32
+.doc 32
+.docx 32
+.dot 32
+.md 32
+.odg 32
+.odp 32
+.ods 32
+.odt 32
+.otg 32
+.otp 32
+.ots 32
+.ott 32
+.pdf 32
+.ppt 32
+.pptx 32
+.rst 32
+.tsv 32
+.txt 32
+.xls 32
+.xlsx 32
+
+#+--- Executables ---+
+.app 01;36
+.bat 01;36
+.btm 01;36
+.cmd 01;36
+.com 01;36
+.exe 01;36
+.msi 01;36
+.reg 01;36
+
+#+--- Ignores / Temp ---+
+*~ 02;37
+.bak 02;37
+.BAK 02;37
+.log 02;37
+.old 02;37
+.OLD 02;37
+.orig 02;37
+.ORIG 02;37
+.part 02;37
+.retry 02;37
+.swo 02;37
+.swp 02;37
+.tmp 02;37
+
+#+--- Images ---+
+.ai 35
+.apng 35
+.arw 35
+.avif 35
+.bmp 35
+.cgm 35
+.cr2 35
+.cr3 35
+.crw 35
+.dng 35
+.dl 35
+.dv 35
+.dvi 35
+.emf 35
+.eps 35
+.gif 35
+.gpr 35
+.heic 35
+.heif 35
+.ico 35
+.jpeg 35
+.jpg 35
+.JPG 35
+.mng 35
+.nef 35
+.pbm 35
+.pcx 35
+.pgm 35
+.png 35
+.PNG 35
+.ppm 35
+.pps 35
+.ppsx 35
+.ps 35
+.psd 35
+.raf 35
+.rw2 35
+.svg 35
+.svgz 35
+.tga 35
+.tif 35
+.tiff 35
+.webp 35
+.xbm 35
+.xcf 35
+.xpm 35
+.xwd 35
+.yuv 35
+
+#+--- Video ---+
+.anx 35
+.asf 35
+.av1 35
+.avi 35
+.avc 35
+.axv 35
+.flc 35
+.fli 35
+.flv 35
+.gl 35
+.hvc 35
+.hevc 35
+.m2ts 35
+.m2v 35
+.m3u 35
+.m3u8 35
+.m4v 35
+.mkv 35
+.mov 35
+.MOV 35
+.mp4 35
+.MP4 35
+.mp4v 35
+.mpeg 35
+.mpg 35
+.nuv 35
+.ogm 35
+.ogv 35
+.ogx 35
+.qt 35
+.rm 35
+.rmvb 35
+.swf 35
+.vob 35
+.vp8 35
+.vp9 35
+.webm 35
+.wmv 35
