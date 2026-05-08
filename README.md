@@ -1,4 +1,4 @@
-# dircolors Themes
+# `dircolors` Themes
 
 Reusable `dircolors` profiles and palette helpers for ANSI-slot-based terminals.
 
@@ -39,14 +39,14 @@ Pastel is a soft custom palette with a very dark background, a bright off-white 
 
 ### Profile Colors
 
-| Sample                                          | Role       | #    | ANSI               | Hex       | RGB           |
+| Sample                                          | Role       | Slot | ANSI               | Hex       | RGB           |
 |-------------------------------------------------|------------|------|--------------------|-----------|---------------|
 | ![Pastel foreground](img/pastel-foreground.svg) | Foreground | `fg` | default foreground | `#eff0f3` | `239 240 243` |
 | ![Pastel background](img/pastel-background.svg) | Background | `bg` | default background | `#191a1c` | `25 26 28`    |
 
 ### ANSI Palette
 
-| Sample                                    | Role           | #    | ANSI       | Hex       | RGB           |
+| Sample                                    | Role           | Slot | ANSI       | Hex       | RGB           |
 |-------------------------------------------|----------------|------|------------|-----------|---------------|
 | ![Pastel ANSI 0](img/pastel-ansi-0.svg)   | Black          | `0`  | `30 / 40`  | `#1e1f22` | `30 31 34`    |
 | ![Pastel ANSI 1](img/pastel-ansi-1.svg)   | Red            | `1`  | `31 / 41`  | `#f89494` | `248 148 148` |
@@ -69,7 +69,7 @@ Pastel is a soft custom palette with a very dark background, a bright off-white 
 
 Nord is an arctic, north-bluish palette created by the [Nord project](https://www.nordtheme.com/) and documented in the official [colors and palettes reference](https://www.nordtheme.com/docs/colors-and-palettes/). The `nord.dircolors` file in this repository follows the canonical `nord0` through `nord15` slot numbering used for terminal color compatibility.
 
-| Sample                      | Token    | #    | ANSI       | Hex       | Palette     |
+| Sample                      | Token    | Slot | ANSI       | Hex       | Palette     |
 |-----------------------------|----------|------|------------|-----------|-------------|
 | ![Nord 0](img/nord-0.svg)   | `nord0`  | `0`  | `30 / 40`  | `#2e3440` | Polar Night |
 | ![Nord 1](img/nord-1.svg)   | `nord1`  | `1`  | `31 / 41`  | `#3b4252` | Polar Night |
