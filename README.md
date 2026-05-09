@@ -8,6 +8,8 @@ This repository currently includes:
 - [`pastel_palette.sh`](./pastel_palette.sh): shell exports for the Pastel palette and default profile colors
 - [`pastel_ls_colors_preview.sh`](./pastel_ls_colors_preview.sh): static `LS_COLORS` preview for the Pastel profile
 - [`nord.dircolors`](./nord.dircolors): Nord-based `dircolors` profile
+- [`Pastel.colorscheme`](./Pastel.colorscheme): Konsole color scheme that maps the 16 ANSI slots to the Pastel palette
+- [`Nord.colorscheme`](./Nord.colorscheme): Konsole color scheme that maps the 16 ANSI slots to the Nord palette
 
 ## Usage
 
@@ -25,6 +27,17 @@ source ./pastel_palette.sh
 echo "$PASTEL_PROFILE_FOREGROUND_HEX"
 echo "$PASTEL_ANSI_12_HEX"
 ```
+
+## Konsole Color Schemes
+
+The `Pastel.colorscheme` and `Nord.colorscheme` files are drop-in [Konsole](https://konsole.kde.org/) color schemes that paint the 16 ANSI slots to match the matching `dircolors` profile in this repository. To install:
+
+```bash
+mkdir -p ~/.local/share/konsole
+cp Pastel.colorscheme Nord.colorscheme ~/.local/share/konsole/
+```
+
+Then in Konsole: **Settings → Edit Current Profile → Appearance** and pick *Pastel* or *Nord*. Bold-bright behavior (whether bold text uses the brighter slot 8–15 variant) is a per-profile setting under the same Appearance tab (*Use intense colors for bold text*); the schemes themselves do not force it either way.
 
 ## ANSI Palette Note
 
