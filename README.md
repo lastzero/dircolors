@@ -28,7 +28,7 @@ echo "$PASTEL_PROFILE_FOREGROUND_HEX"
 echo "$PASTEL_ANSI_12_HEX"
 ```
 
-## Konsole Color Schemes
+### Konsole Color Schemes
 
 The `Pastel.colorscheme` and `Nord.colorscheme` files are drop-in [Konsole](https://konsole.kde.org/) color schemes that paint the 16 ANSI slots to match the matching `dircolors` profile in this repository. To install:
 
@@ -39,27 +39,13 @@ cp Pastel.colorscheme Nord.colorscheme ~/.local/share/konsole/
 
 Then in Konsole: **Settings → Edit Current Profile → Appearance** and pick *Pastel* or *Nord*. Bold-bright behavior (whether bold text uses the brighter slot 8–15 variant) is a per-profile setting under the same Appearance tab (*Use intense colors for bold text*); the schemes themselves do not force it either way.
 
-## ANSI Palette Note
-
-`dircolors` only emits ANSI SGR codes such as `34`, `95`, or `44`. The final appearance therefore depends on how your terminal maps ANSI color slots `0` through `15`.
-
-- The Pastel profile ships its intended slot values in [`pastel_palette.sh`](./pastel_palette.sh).
-- The Nord profile assumes the standard `nord0` through `nord15` mapping used by the upstream [Nord project](https://www.nordtheme.com/) and its [color palette documentation](https://www.nordtheme.com/docs/colors-and-palettes/).
-
 ## Pastel
 
 Pastel is a soft custom palette with a very dark background, a bright off-white foreground, and low-harshness accent colors for the 16 ANSI terminal slots.
 
-### Profile Colors
-
-| Sample                                          | Role       | Slot | ANSI               | Hex       | RGB           |
-|-------------------------------------------------|------------|------|--------------------|-----------|---------------|
-| ![Pastel foreground](img/pastel-foreground.svg) | Foreground | `fg` | default foreground | `#eff0f3` | `239 240 243` |
-| ![Pastel background](img/pastel-background.svg) | Background | `bg` | default background | `#191a1c` | `25 26 28`    |
-
 ### ANSI Palette
 
-| Sample                                    | Role           | Slot | ANSI       | Hex       | RGB           |
+| Color                                     | Role           | Slot | ANSI       | Hex       | RGB           |
 |-------------------------------------------|----------------|------|------------|-----------|---------------|
 | ![Pastel ANSI 0](img/pastel-ansi-0.svg)   | Black          | `0`  | `30 / 40`  | `#1e1f22` | `30 31 34`    |
 | ![Pastel ANSI 1](img/pastel-ansi-1.svg)   | Red            | `1`  | `31 / 41`  | `#f89494` | `248 148 148` |
@@ -68,8 +54,8 @@ Pastel is a soft custom palette with a very dark background, a bright off-white 
 | ![Pastel ANSI 4](img/pastel-ansi-4.svg)   | Blue           | `4`  | `34 / 44`  | `#a9c7f1` | `169 199 241` |
 | ![Pastel ANSI 5](img/pastel-ansi-5.svg)   | Magenta        | `5`  | `35 / 45`  | `#cfbaf0` | `207 186 240` |
 | ![Pastel ANSI 6](img/pastel-ansi-6.svg)   | Cyan           | `6`  | `36 / 46`  | `#96c2c6` | `150 194 198` |
-| ![Pastel ANSI 7](img/pastel-ansi-7.svg)   | White          | `7`  | `37 / 47`  | `#f1edfb` | `241 237 251` |
-| ![Pastel ANSI 8](img/pastel-ansi-8.svg)   | Bright black   | `8`  | `90 / 100` | `#393b40` | `57 59 64`    |
+| ![Pastel ANSI 7](img/pastel-ansi-7.svg)   | White          | `7`  | `37 / 47`  | `#f7f4fe` | `247 244 254` |
+| ![Pastel ANSI 8](img/pastel-ansi-8.svg)   | Bright black   | `8`  | `90 / 100` | `#737987` | `115 121 135` |
 | ![Pastel ANSI 9](img/pastel-ansi-9.svg)   | Bright red     | `9`  | `91 / 101` | `#fda5ac` | `253 165 172` |
 | ![Pastel ANSI 10](img/pastel-ansi-10.svg) | Bright green   | `10` | `92 / 102` | `#b9fbc0` | `185 251 192` |
 | ![Pastel ANSI 11](img/pastel-ansi-11.svg) | Bright yellow  | `11` | `93 / 103` | `#fdffb6` | `253 255 182` |
@@ -78,11 +64,31 @@ Pastel is a soft custom palette with a very dark background, a bright off-white 
 | ![Pastel ANSI 14](img/pastel-ansi-14.svg) | Bright cyan    | `14` | `96 / 106` | `#c0fdff` | `192 253 255` |
 | ![Pastel ANSI 15](img/pastel-ansi-15.svg) | Bright white   | `15` | `97 / 107` | `#fcfcfc` | `252 252 252` |
 
+### Profile Colors
+
+| Color                                           | Role       | Slot | ANSI               | Hex       | RGB           |
+|-------------------------------------------------|------------|------|--------------------|-----------|---------------|
+| ![Pastel foreground](img/pastel-foreground.svg) | Foreground | `fg` | default foreground | `#eff0f3` | `239 240 243` |
+| ![Pastel background](img/pastel-background.svg) | Background | `bg` | default background | `#191a1c` | `25 26 28`    |
+
+### Terminal Profile
+
+These values are optional profile-level UI colors (not ANSI palette slots). If your terminal supports explicit bold, cursor, and selection colors, use:
+
+| Setting         | Text Color                                                      | Hex       | Background Color                                                            | Hex       |
+|-----------------|-----------------------------------------------------------------|-----------|-----------------------------------------------------------------------------|-----------|
+| Default color   | ![Pastel default text](img/pastel-foreground.svg)               | `#eff0f3` | ![Pastel default background](img/pastel-background.svg)                     | `#191a1c` |
+| Bold color      | ![Pastel bold text](img/pastel-profile-bold-text.svg)           | `#f4f6f9` | n/a                                                                         | n/a       |
+| Cursor color    | ![Pastel cursor text](img/pastel-profile-cursor-text.svg)       | `#3b4252` | ![Pastel cursor background](img/pastel-profile-cursor-background.svg)       | `#d8dee9` |
+| Highlight color | ![Pastel highlight text](img/pastel-profile-highlight-text.svg) | `#2e3440` | ![Pastel highlight background](img/pastel-profile-highlight-background.svg) | `#8eaab2` |
+
 ## Nord
 
 Nord is an arctic, north-bluish palette created by the [Nord project](https://www.nordtheme.com/) and documented in the official [colors and palettes reference](https://www.nordtheme.com/docs/colors-and-palettes/). The `nord.dircolors` file in this repository follows the canonical `nord0` through `nord15` slot numbering used for terminal color compatibility.
 
-| Sample                      | Token    | Slot | ANSI       | Hex       | Palette     |
+### ANSI Palette
+
+| Color                       | Token    | Slot | ANSI       | Hex       | Palette     |
 |-----------------------------|----------|------|------------|-----------|-------------|
 | ![Nord 0](img/nord-0.svg)   | `nord0`  | `0`  | `30 / 40`  | `#2e3440` | Polar Night |
 | ![Nord 1](img/nord-1.svg)   | `nord1`  | `1`  | `31 / 41`  | `#3b4252` | Polar Night |
@@ -100,6 +106,13 @@ Nord is an arctic, north-bluish palette created by the [Nord project](https://ww
 | ![Nord 13](img/nord-13.svg) | `nord13` | `13` | `95 / 105` | `#ebcb8b` | Aurora      |
 | ![Nord 14](img/nord-14.svg) | `nord14` | `14` | `96 / 106` | `#a3be8c` | Aurora      |
 | ![Nord 15](img/nord-15.svg) | `nord15` | `15` | `97 / 107` | `#b48ead` | Aurora      |
+
+## ANSI Palette Notes
+
+`dircolors` only emits ANSI SGR codes such as `34`, `95`, or `44`. The final appearance therefore depends on how your terminal maps ANSI color slots `0` through `15`.
+
+- The Pastel profile ships its intended slot values in [`pastel_palette.sh`](./pastel_palette.sh).
+- The Nord profile assumes the standard `nord0` through `nord15` mapping used by the upstream [Nord project](https://www.nordtheme.com/) and its [color palette documentation](https://www.nordtheme.com/docs/colors-and-palettes/).
 
 ## Sources
 
